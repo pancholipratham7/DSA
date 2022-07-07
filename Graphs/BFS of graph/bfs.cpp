@@ -10,9 +10,8 @@ using namespace std;
 void bfs(unordered_map<int,list<int>> adj,int node,vector<int> &ans,unordered_map<int,bool> &visited){
     queue<int> q;
     // map for checking whether the node has been visited or not
-    unordered_map<int,bool> m;
-    q.push(0);
-    m[0]=true;
+    q.push(node);
+    visited[node]=true;
 
     while(!q.empty()){
         int x=q.front();
