@@ -77,17 +77,5 @@ int main(){
     }
   
     djikstraAlgo(adj,dist,v,source);
-
-    // printing the distance array
-    // for(int i=1;i<=v;i++){
-    //     // if(dist[v]==INT_MAX){
-    //     //     cout<<"Distance of the source to vertex "<<i<<" is = "<<"InFinity"<<endl;
-    //     // }
-    //     // else{
-    //     //     cout<<"Distance of the source to vertex "<<i<<" is = "<<dist[v]<<endl;
-    //     // }
-    //         cout<<"Distance of the source to vertex "<<i<<" is = "<<dist[v]<<endl;
-    // }
-
     return 0;
 }
