@@ -5,10 +5,7 @@
 #include<limits.h>
 using namespace std;
 
-// concept
-// imp note : in a tree there is always a single parent for a child
-// so we can represent a tree using a single array where we can represent the parent child relationship using array index and value 
-
+// Concept
 // take any vertex as starting vertex and find the min edge for it (suppose for eg there are edges 1-2 and 1-3 but 1-2 is minm so select it)
 // now you need to select the min weight edge from aLL edges originating from 2 and 1 (suppose the edges are 1-3,2-4,2-6 but we will selecr 2-6 because it is minm)
 // now you need to select the min weight edge from aLL edges originating from 2,1 and 6

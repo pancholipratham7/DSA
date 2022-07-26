@@ -11,7 +11,7 @@ using namespace std;
 void djikstraAlgo(unordered_map<int,list<pair<int,int>>> adj,int dist[],int v,int src){
 
     // priority queue
-    // using priority queue we can get node with minimum distance in the most opitmized way
+    // using priority queue or set we can get node with minimum distance in the most opitmized way
     set<pair<int,int>> st;
     
     // Initialization
