@@ -42,7 +42,6 @@ bool subsetSumToK(int n, int k, vector<int> &arr) {
 }
 
 //Tabulation with space optimization
-#include<vector>
 bool subsetSumToK(int n, int k, vector<int> &arr) {
     // Write your code here.
        vector<bool> prev(k+1,0),curr(k+1,0);
