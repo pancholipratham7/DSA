@@ -41,69 +41,24 @@ int lcs(string s, string t)
 }
 
 
-// Tabulation Code
-
-int lcs(string s, string t)
-{
-	//Write your code here
-    vector<vector<int>> dp(s.length(),vector<int>(t.length(),0));
-    int n1=s.length()-1;
-    int n2=t.length()-1;
-    
-    for(int i=0;i<=n2;i++){
-            for(int j=0;j<=i;j++){
-               if(s[0]==t[j]) dp[0][i]=1;
-            }
-    }        
-    
-     for(int i=0;i<=n1;i++){
-            for(int j=0;j<=i;j++){
-               if(s[j]==t[0]) dp[i][0]=1;
-            }
-    }       
-    
-    for(int i=1;i<=n1;i++){
-        for(int j=1;j<=n2;j++){
-            int maxL=0;
-            if(s[i]==t[j]){
-                maxL=1+dp[i-1][j-1];
-            }
-            else{
-                maxL=max(dp[i-1][j],dp[i][j-1]);
-            }
-           dp[i][j]=maxL;
-        }
-    }
-    return dp[n1][n2];
-    
-}
 
 
 // Tabulation code with space optimization
-int lcs(string s, string t)
-{
 	//Write your code here
-    vector<int> dp(t.length(),0),curr(t.length(),0);
-    int n1=s.length()-1;
-    int n2=t.length()-1;
-    
-    for(int i=0;i<=n2;i++){
-            for(int j=0;j<=i;j++){
-               if(s[0]==t[j]) dp[i]=1;
+     int longestCommonSubsequence(string s, string t) {
+        int n=s.size();
+        int m=t.size();
+        vector<int> prev(m+1,0),curr(m+1,0);
+
+
+        for(int j=0;j<=m;j++) prev[j]=0;
+        
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=m;j++){
+                if(s[i-1]==t[j-1]) curr[j]=1+prev[j-1];
+                else curr[j]=max(prev[j],curr[j-1]);
             }
-    }        
-    for(int i=1;i<=n1;i++){
-        for(int j=0;j<=n2;j++){
-            int maxL=0;
-            if(s[i]==t[j]){
-                maxL=1+dp[j-1];
-            }
-            else{
-                maxL=max(dp[j],curr[j-1]);
-            }
-           curr[j]=maxL;
+            prev=curr;
         }
-        dp=curr;
+        return prev[m];    
     }
-    return dp[n2];    
-}
