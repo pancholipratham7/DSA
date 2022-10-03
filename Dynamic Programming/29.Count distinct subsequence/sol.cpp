@@ -27,6 +27,7 @@ using namespace std;
     }
 
 
+// We used double here because there is something wrong in the given testcases
 // Tabulation code
  int numDistinct(string s, string t) {
         int n=s.length();
