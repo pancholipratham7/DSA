@@ -4,6 +4,8 @@
 #include<unordered_map>
 using namespace std;
 
+
+// Converting maxHeap to minHeap concept
 vector<string> topKFrequent(vector<string>& words, int k) {
         vector<string> ans(k);
         priority_queue<pair<int,string>> pq;
@@ -23,3 +25,6 @@ vector<string> topKFrequent(vector<string>& words, int k) {
         return ans;
         
     }
+
+//using a custom comparator with priority queue
+// See how to create a custom comparator with priority queue in the dsa solving technique notes copy
